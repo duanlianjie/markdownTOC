@@ -10,9 +10,11 @@ python脚本，用于生成markdown文件的TableOfContent，解决Github Flavor
 
 ## 运行
 
-打开脚本所在目录的命令行，运行以下命令即可（markdown.md替换为要生成TOC的markdown文件路径），生成新的markdown将覆盖原文件
+打开脚本所在目录的命令行，运行以下命令即可，生成新的markdown将覆盖原文件
 
-`python main.py markdown.md`
+`python main.py markdown.md [...]`
+
+> **markdown.md替换为要生成TOC的markdown文件路径，后面可跟多个文件同时生成**
 
 ## 特别情况考虑
 
@@ -31,8 +33,12 @@ python脚本，用于生成markdown文件的TableOfContent，解决Github Flavor
 - 标题是空白字符
 
     - 抛弃
+    
+- 没有任何标题
+    
+    - 不生成锚点
 
 - 编码问题
     
-    - 使用chardet检测编码
+    - 使用chardet检测编码，装包命令已经写在脚本中
     

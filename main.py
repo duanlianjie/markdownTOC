@@ -1,4 +1,9 @@
-import chardet
+try:
+    import chardet
+except:
+    import os
+    os.system("pip install chardet")
+    import chardet
 
 # 获取file的编码
 def get_encoding(file):
@@ -71,10 +76,13 @@ def write_to_file(result_list, file):
 
 if __name__ == "__main__":
     import sys
-    file = sys.argv[1]
-
-    md = read_md(file)
-    level_list, name_list = get_level_name(md)
-    result_list = get_result(level_list, name_list)
-    result =  write_to_file(result_list, file)
-    print(result)
+    files = sys.argv[1:]
+    for file in files:
+        md = read_md(file)
+        level_list, name_list = get_level_name(md)
+        if len(name_list) > 0 :
+            result_list = get_result(level_list, name_list)
+            result =  write_to_file(result_list, file)
+            print(file, '\n\n', result)
+        else :
+            print(file, '\n\n', "No title")
