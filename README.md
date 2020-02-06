@@ -31,9 +31,9 @@ python main.py -file=markdown.md[[,m1.md,m2.md,...] -replace=True]
 ```
 
 
-- 多个文件时用,分割
+- 多个文件时用','分割
 
-- 默认生成新的markdown不覆盖原文件，添加参数replace=True将覆盖原文件
+- 默认生成新的markdown不覆盖原文件，添加参数-replace=True将覆盖原文件
 
 ## 特殊情况考虑
 
